@@ -22,10 +22,66 @@
 
 \begin{document}
 	\setlength{\parskip}{6pt}
-	
-	% generates the title
-	\input{CoverPage.tex}
-	
+	\begin{titlepage}
+	\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
+
+	\center % Center everything on the page
+	 
+	%----------------------------------------------------------------------------------------
+	%	LOGO SECTIONS
+	%----------------------------------------------------------------------------------------
+
+	\includegraphics[width=\textwidth]{front-page}
+
+	%----------------------------------------------------------------------------------------
+	%	TITLE SECTION
+	%----------------------------------------------------------------------------------------
+
+	\HRule \\[0.4cm]
+	{ \huge \bfseries Software Requirements Specification}\\[0.4cm] % Title of your document
+	\HRule \\[1.5cm]
+	 
+	%----------------------------------------------------------------------------------------
+	%	MEMBERS, TEAM NAME SECTION
+	%----------------------------------------------------------------------------------------
+
+	\begin{minipage}{0.5\textwidth}
+	\begin{flushleft} \large
+	\emph{Members:}\\% add your name and student here
+	Dewald de Jager  		\hfill	15188800 \\
+	Johan du Plooy    		\hfill	12070794 \\
+	Juan du Preez 			\hfill	15189016\\
+	Marthinus Hermann		\hfill	15081479\\
+	Orisha Orrie 			\hfill	13025199\\
+	Azhar Patel 			\hfill	15052592\\
+	Maria Qumayo   			\hfill	29461775\\
+	\end{flushleft}
+	\end{minipage}
+	~
+	\begin{minipage}{0.4\textwidth}
+	\begin{flushright} \large
+	{ \huge \bfseries Team Python }% Title of document
+	{\large \today}\\
+	{\large v0.1}
+	\end{flushright}
+	\end{minipage}\\[4cm]
+\end{titlepage}
+
 	\tableofcontents
+		\newpage
 	
+	\section{Introduction}
+    	
+        \subsection{Purpose}
+	\subsection{Scope}
+	\section{External interface requirements}
+	\section{Performance requirements}
+	\section{Design constraints}
+	\section{Software system attributes}
+	\section{UML Diagrams}
+	\subsection{Data}
+	\subsection{Users}
+	\subsection{Events}
+	\subsection{Points of interest}
+	\subsection{Final UML}
 \end{document}
