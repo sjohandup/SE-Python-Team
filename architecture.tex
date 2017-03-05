@@ -107,6 +107,9 @@
 	\subsection{Modularity}
 	\subsection{Cohesion}
 	\subsection{Coupling}
+	The subsystems should have minimal impact on and dependency on the other subsystems of the system. The system as a whole applies the low coupling principle. Subsystems should be abstracted and implementation changes should only affect the subsystem that was modified. This abstraction layer will provide an interface between all the subsystems that prevents interference and augments communication between them.
+	
+	The data module will be represented as a module with requests and responses that are used both by access channels and the server. This allows for other subsystems to easily use it without having to worry about implementation specific details and the implementation can be changed to use a different technology or update the application programming interface (API).
 	
 	\section{Technologies}
 	\subsection{Data}	
