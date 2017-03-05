@@ -1,5 +1,7 @@
 ****TODO
-  Add Observer/Notifier in use case diagram since notifications are vital for events
+  Add Observer/Notifier in use case diagram since notifications are vital for events;
+  Add multiplicities in class diagram;
+  Merge with Maria
 ****  
 
 
