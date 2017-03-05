@@ -22,10 +22,81 @@
 
 \begin{document}
 	\setlength{\parskip}{6pt}
-	
-	% generates the title
-	\input{CoverPage.tex}
-	
+	\begin{titlepage}
+	\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
+
+	\center % Center everything on the page
+	 
+	%----------------------------------------------------------------------------------------
+	%	LOGO SECTIONS
+	%----------------------------------------------------------------------------------------
+
+	\includegraphics[width=\textwidth]{front-page}
+
+	%----------------------------------------------------------------------------------------
+	%	TITLE SECTION
+	%----------------------------------------------------------------------------------------
+
+	\HRule \\[0.4cm]
+	{ \huge \bfseries Software Requirements Specification}\\[0.4cm] % Title of your document
+	\HRule \\[1.5cm]
+	 
+	%----------------------------------------------------------------------------------------
+	%	MEMBERS, TEAM NAME SECTION
+	%----------------------------------------------------------------------------------------
+
+	\begin{minipage}{0.5\textwidth}
+	\begin{flushleft} \large
+	\emph{Members:}\\% add your name and student here
+	Dewald de Jager  		\hfill	15188800 \\
+	Johan du Plooy    		\hfill	12070794 \\
+	Juan du Preez 			\hfill	15189016\\
+	Marthinus Hermann		\hfill	15081479\\
+	Orisha Orrie 			\hfill	13025199\\
+	Azhar Patel 			\hfill	15052592\\
+	Maria Qumayo   			\hfill	29461775\\
+	\end{flushleft}
+	\end{minipage}
+	~
+	\begin{minipage}{0.4\textwidth}
+	\begin{flushright} \large
+	{ \huge \bfseries Team Python }% Title of document
+	{\large \today}\\
+	{\large v0.1}
+	\end{flushright}
+	\end{minipage}\\[4cm]
+\end{titlepage}
+
 	\tableofcontents
+		\newpage
 	
+	\section{Introduction}
+    	
+        \subsection{Purpose}
+	\subsection{Scope}
+	\section{External interface requirements}
+	\section{Performance requirements}
+	\paragraph{The system should be able to run in the following way: }
+	\begin{itemize}
+	\item The system will be run through campus servers as well as web servers.
+	\item The performance of the application will be dependent on the user’s hardware device.
+	\item The loading time of each page will be dependent on the strength of the user’s internet connection as well as the number of users currently using campus Wi-Fi.
+	\item The time it takes to log in will be dependent on the internet connection.
+	\item All new users should be added to the system in less than a second however, it may take the user longer to see this, depending on the internet connection.
+	\item Users should be sent notifications as soon as they are available on the system.
+	\item Admin should be able to access the GIS module as well as user module with ease in less than a second as these details will be located on campus servers.
+	\item Points of interest should appear as soon as a user searches for a location or searches for a specific point of interest however, this will once again be dependent on the internet connection.
+	\item Users should be able to search, delete, save as well as modify their route. This should be able to take place quickly. Saving and modifying will be dependent on the user and searching and deleting will be dependent on the internet connection.
+	\item Rendering display service will differ from device to device while requesting service relies on the internet connection.
+	\item Push services for events should happen as soon as the event has been added to the application
+	\item Fitness service and heat maps should be updated in real time.
+	\end{itemize}
+	\section{Design constraints}
+	\section{Software system attributes}
+	\section{UML Diagrams}
+	\subsection{Data}
+	\subsection{Users}
+	\subsection{Events}
+	\subsection{Points of interest}
+	\subsection{Final UML}
 \end{document}
