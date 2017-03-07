@@ -1,6 +1,7 @@
 ****TODO
   Add Observer/Notifier in use case diagram since notifications are vital for events;
   Add multiplicities in class diagram;
+  Rename Observer/Memento class considering that it is actually a Subject/Memento class;
   Merge with Maria
 ****  
 
