@@ -125,7 +125,10 @@
 	The data module will be represented as a module with requests and responses that are used both by access channels and the server. This allows for other subsystems to easily use it without having to worry about implementation specific details and the implementation can be changed to use a different technology or update the application programming interface (API).
 	
 	\section{Technologies}
-	\subsection{Data}	
+	\subsection{Data}
+	Message passing is done in a transactional manner in this subsystem. The access channels, or clients, need a way to send requests to the server and receive responses. Likewise, the server needs a way to service requests and issue responses. The University of Pretoria Wi-Fi infrastructure can be advantageous in this scenario as we can assume the user is likely connected to the Wi-Fi and fall back on cellular data otherwise. This is done by having the server accessible both locally and publicly via the Internet. If a connection cannot be established to the local server a connection via cellular data or a different Wi-Fi connection is made to the server.
+	
+	The connection is established via either the HyperText Transfer Protocol (HTTP), or it's secured counterpart HTTPS that makes use of the Secure Socket Layer (SSL) depending on the nature of the message contents, and is maintained only for the duration of the message send and receive process. The requests will, more specifically, be made using Asynchronous JSON and XML (AJAX) and will always be paired with a response. The protocol that HTTP is built on, the Transmission Control Protocol (TCP), ensures the delivery of messages in the correct order and that the messages remain intact.
 	\subsection{Users}
 	\subsection{Events}
 	\subsection{Points of Interest}
