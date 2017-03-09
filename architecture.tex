@@ -79,6 +79,8 @@
 	The NavUP system can be designed with the high cohesion principle in mind.  The system as a whole should be formulated in to a hierarchical tree-structure, comprising of subsystems, or modules.  The modules should be able to either function independently, or be able to call on one or more modules in the hierarchy to perform a given task.  Thus adding or removing modules should not break the system so much as increase or reduce  its functionality as a whole.
 	
 	The Data module comprises mainly out of a client and a server subsystem.  The server for example would be able to make use of a Database Management System, for handling records relevant to the NavUP system, such as location information, events etc.  Furthermore, both the Client and Server would need to have some form of communication method, which could also be in the form of a subsystem or module.
+	
+	One of the more beneficial advantages of modularity is the fact that a module/subsystem can be focused on to either make improvements or even completely swap it out for another more efficient subsystem to improve overall performance.
 	\subsection{Coupling}
 	The subsystems should have minimal impact on and dependency on the other subsystems of the system. The system as a whole applies the low coupling principle. Subsystems should be abstracted and implementation changes should only affect the subsystem that was modified. This abstraction layer will provide an interface between all the subsystems that prevents interference and augments communication between them.
 	
