@@ -55,6 +55,40 @@
 	\end{itemize}
 	
 	\section{Design Constraints}
+	This section describes restrictions on design alternatives regarding standards and limitations of hardware capabilities
+	\begin{enumerate}
+		\item \textbf{Storage space}
+		\begin{itemize}
+			\item \textbf{Description:} The amount of storage space required by the application must be within the maximum storage limits of a budget phone to accomodate a range of phones typically used by students.
+			\item \textbf{Maximum:} 90MB
+			\item \textbf{Reasonable:} 40MB
+			\item \textbf{Optimal:} 10MB.\newline
+		\end{itemize}
+	
+		\item \textbf{Memory usage}
+		\begin{itemize}
+			\item \textbf{Description:} The amount of RAM used by the application should be a reasonable amount considering that many smartphones used by students only have a capacity of 1GB RAM.
+			\item \textbf{Maximum:} 100MB
+			\item \textbf{Reasonable:} 90MB
+			\item \textbf{Optimal:} 40MB.\newline
+		\end{itemize}
+		
+		\item \textbf{Data Retrieval}
+		\begin{itemize}
+			\item \textbf{Description:} The return rate of data from relevant databases such as the GIS database should be close to perfect in order to prevent delays and inaccurate navigation.
+			\item \textbf{Minimal:} 98% return rate
+			\item \textbf{Reasonable:} 99% return rate
+			\item \textbf{Optimal:} 100% return rate.\newline
+		\end{itemize}
+		
+		\item \textbf{Networks and Location}
+		\begin{itemize}
+			\item \textbf{Description:} The system will need to make use of Wi-Fi, mobile networks and GPS in order to enhance accuracy of location and results as far as possible. In addition, the system will need to use relevant networks in the their respective areas (i.e., using GPS within buildings is pointless).
+			\item \textbf{Minimal:} 98% accuracy
+			\item \textbf{Reasonable:} 99% accuracy
+			\item \textbf{Optimal:} 100% accuracy.\newline
+		\end{itemize}
+\end{enumerate}
 	
 	\section{Software System Attributes}
 	\subsection{Reliability}
