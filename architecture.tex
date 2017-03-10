@@ -24,7 +24,6 @@
 	\setlength{\parskip}{6pt}
 	% generates the coverPage
 	\input{coverPage.tex}
-
 	\tableofcontents
 	\newpage
 	
@@ -65,6 +64,40 @@
 	\end{itemize}
 	
 	\section{Design Constraints}
+	This section describes restrictions on design alternatives regarding standards and limitations of hardware capabilities
+	\begin{enumerate}
+		\item \textbf{Storage space}
+		\begin{itemize}
+			\item \textbf{Description:} The amount of storage space required by the application must be within the maximum storage limits of a budget phone to accomodate a range of phones typically used by students.
+			\item \textbf{Maximum:} 90MB
+			\item \textbf{Reasonable:} 40MB
+			\item \textbf{Optimal:} 10MB.\newline
+		\end{itemize}
+	
+		\item \textbf{Memory usage}
+		\begin{itemize}
+			\item \textbf{Description:} The amount of RAM used by the application should be a reasonable amount considering that many smartphones used by students only have a capacity of 1GB RAM.
+			\item \textbf{Maximum:} 100MB
+			\item \textbf{Reasonable:} 90MB
+			\item \textbf{Optimal:} 40MB.\newline
+		\end{itemize}
+		
+		\item \textbf{Data Retrieval}
+		\begin{itemize}
+			\item \textbf{Description:} The return rate of data from relevant databases such as the GIS database should be close to perfect in order to prevent delays and inaccurate navigation.
+			\item \textbf{Minimal:} 98% return rate
+			\item \textbf{Reasonable:} 99% return rate
+			\item \textbf{Optimal:} 100% return rate.\newline
+		\end{itemize}
+		
+		\item \textbf{Networks and Location}
+		\begin{itemize}
+			\item \textbf{Description:} The system will need to make use of Wi-Fi, mobile networks and GPS in order to enhance accuracy of location and results as far as possible. In addition, the system will need to use relevant networks in the their respective areas (i.e., using GPS within buildings is pointless).
+			\item \textbf{Minimal:} 98% accuracy
+			\item \textbf{Reasonable:} 99% accuracy
+			\item \textbf{Optimal:} 100% accuracy.\newline
+		\end{itemize}
+\end{enumerate}
 	
 	\section{Software System Attributes}
 	\subsection{Reliability}
@@ -86,6 +119,11 @@
 	\subsection{Reusability}
 	\subsection{Modularity}
 	\subsection{Cohesion}
+	The NavUP system can be designed with the high cohesion principle in mind.  The system as a whole should be formulated in to a hierarchical tree-structure, comprising of subsystems, or modules.  The modules should be able to either function independently, or be able to call on one or more modules in the hierarchy to perform a given task.  Thus adding or removing modules should not break the system so much as increase or reduce  its functionality as a whole.
+	
+	The Data module comprises mainly out of a client and a server subsystem.  The server for example would be able to make use of a Database Management System, for handling records relevant to the NavUP system, such as location information, events etc.  Furthermore, both the Client and Server would need to have some form of communication method, which could also be in the form of a subsystem or module.
+	
+	One of the more beneficial advantages of modularity is the fact that a module/subsystem can be focused on to either make improvements or even completely swap it out for another more efficient subsystem to improve overall performance.
 	\subsection{Coupling}
 	The subsystems should have minimal impact on and dependency on the other subsystems of the system. The system as a whole applies the low coupling principle. Subsystems should be abstracted and implementation changes should only affect the subsystem that was modified. This abstraction layer will provide an interface between all the subsystems that prevents interference and augments communication between them.
 	
@@ -102,7 +140,62 @@
 	
 	\section{UML Diagrams}
 	\subsection{Data}
+	\begin{figure}[!h]
+        \centering
+        \includegraphics[width=\textwidth]{Diagrams/Data/data_use_case_diagram}
+        \caption{Data Use Case Diagram}
+        \label{fig:data_use_case}
+    \end{figure}
+    \begin{figure}[!h]
+        \centering
+        \includegraphics[width=\textwidth]{Diagrams/Data/data_class_diagram}
+        \caption{Data Class Diagram}
+        \label{fig:data_class}
+    \end{figure}
+
 	\subsection{Users}
+	\begin{figure}[!h]
+        \centering
+        \includegraphics[width=\textwidth]{Diagrams/UserManagement/UserUseCaseDiagram}
+        \caption{User Management Use Case Diagram}
+        \label{fig:user_use_case}
+    \end{figure}
+    \begin{figure}[!h]
+        \centering
+        \includegraphics[width=\textwidth]{Diagrams/UserManagement/UserManagement_ClassDiagram}
+        \caption{User Management Class Diagram}
+        \label{fig:user_class}
+    \end{figure}
+    \begin{figure}[!h]
+        \centering
+        \includegraphics[width=\textwidth]{Diagrams/UserManagement/UseActivityDiagram}
+        \caption{User Management Activity Diagram}
+        \label{fig:user_activity}
+    \end{figure}
 	\subsection{Events}
+	\begin{figure}[!h]
+        \centering
+        \includegraphics[width=\textwidth]{Diagrams/Events/AzharEventsUseCaseDiagram}
+        \caption{Events Use Case Diagram}
+        \label{fig:events_use_case}
+    \end{figure}
+    \begin{figure}[!h]
+        \centering
+        \includegraphics[width=\textwidth]{Diagrams/Events/AzharEventsClassDiagram}
+        \caption{Events Class Diagram}
+        \label{fig:events_class}
+    \end{figure}
 	\subsection{Points of Interest}
+	\begin{figure}[!h]
+        \centering
+        \includegraphics[width=\textwidth]{Diagrams/PointsOfInterest/"Placesofinterest (1)"}
+        \caption{Points of Interest Use Case Diagram}
+        \label{fig:poi_use_case}
+    \end{figure}
+    \begin{figure}[!h]
+        \centering
+        \includegraphics[width=\textwidth]{Diagrams/PointsOfInterest/"POIClass (6)"}
+        \caption{Points of Interest Class Diagram}
+        \label{fig:poi_class}
+    \end{figure}
 \end{document}
