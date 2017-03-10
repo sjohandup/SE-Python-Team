@@ -1,0 +1,10 @@
+Motivations behind Design Patterns used:
+  Observer  : To notify users of new events and changes to events via push notifications
+  Memento   : To store/restore states of events in the case of an admin needing to undo a change
+  Template  : Inherit attributes and operations from parent Event class to allow for specific refinements
+  
+It is important to note that the Events class diagram involves some classes such as the Notifier and Application classes in order to emphasize the importance that these classes have regarding the functionality of the Events Module. 
+The Notifier class emphasizes the importance of push-notifications when events are created or edited whilst also acting as a memento in order to save the state of events should a previous state be restored and then notified to users.
+The Application class can be seen as an abstraction of the Access Module and contains operations such as "syncCalendar()" and "postToSocialMedia()" which are both important in the functionality of the Events Module. These functions, as their names suggest, synchronize events with a calendar (either the users calendar or a calendar that ships with the application) and posts these new events to social media such as Facebook and Instagram in order to create awareness of the event.
+
+
