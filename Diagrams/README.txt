@@ -1,1 +1,1 @@
-Add diagrams in this folder
+Don't forget to add multiplicities where needed in class diagrams
