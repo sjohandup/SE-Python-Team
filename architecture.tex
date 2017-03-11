@@ -41,6 +41,8 @@
 	\subsection{Communication}
 	The software will interact primarily through a WIFI connection to send requests and recieve responses from the local server.  The most commonly used WIFI frequency is measured at 2.4 GHz, although a more recent upgrade has made use of the 5.0 GHz frequency bandwidth capable of transferring data at a much faster rate.  Thus if the hardware is capable of providing both speeds, the software should be compatable with both, and not cause a bottleneck for devices capable of the higher transfer rate, but also allow for slower connections to be possible.  
 	
+	If a web based API is used as a back-end technology, communication will be easy when using a web server, and web-client.  However when working with native IOS and Android, libraries will need to be included to make comunication possible.  Thus for example making use of sockets to establish connection, and read/write buffer streams for sending and recieving data to and from the web server.  
+	
 	\section{Performance Requirements}
 	\paragraph{The system should be able to run in the following way: }
 	\begin{itemize}
