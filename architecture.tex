@@ -219,6 +219,27 @@ Application icons visually express the application or brands product and service
         \caption{User Management Use Case Diagram}
         \label{fig:user_use_case}
     \end{figure}
+	
+	    \paragraph{Design patterns used for user class diagram: }
+		\begin{enumerate}
+			\item \textbf{Composite design Pattern:}
+			\begin{itemize}
+				\item \textbf Guest is the Leaf since he can't have any friends.(Not until he registers).
+				\item \textbf User is the component the abstract class
+				\item \textbf RegisteredUser is the Composite, since a RegisteredUser can have friends and his friends can have friends.
+			\end{itemize}
+		
+			\item \textbf{Iterator :}
+			\begin{itemize}
+				\item \textbf We implemented the iterator pattern to enable us to access the ActiveUsers. We will use this to generate heat maps and  ActiveUsers will also be used to get locations of other users 
+							to name only two.
+				\item \textbf User is the component the abstract class
+				\item \textbf RegisteredUser is the Composite, since a RegisteredUser can have friends and his friends can have friends.
+			\end{itemize}		
+		
+		\end{enumerate}
+	
+	
     \begin{figure}[!h]
         \centering
         \includegraphics[width=\textwidth]{Diagrams/UserManagement/UserManagement_ClassDiagram}
