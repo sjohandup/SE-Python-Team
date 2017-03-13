@@ -200,6 +200,15 @@ Application icons visually express the application or brands product and service
 	
 	\section{UML Diagrams}
 	\subsection{Data}
+	 \paragraph{Design patterns used for data class diagram: }
+		\begin{enumerate}
+			\item \textbf{Singleton:}
+			\begin{itemize}
+				\item DownstreamManager is a Singleton
+				\item UpstreamManager is a Singleton
+			\end{itemize}	
+		
+		\end{enumerate}
 	\begin{figure}[!h]
         \centering
         \includegraphics[width=\textwidth]{Diagrams/Data/data_use_case_diagram}
@@ -216,7 +225,7 @@ Application icons visually express the application or brands product and service
 	\subsection{Users}
 	\begin{figure}[!h]
         \centering
-        \includegraphics[width=\textwidth]{Diagrams/UserManagement/UserUseCaseDiagram}
+        \includegraphics[width=0.75\textwidth]{Diagrams/UserManagement/UserUseCaseDiagram}
         \caption{User Management Use Case Diagram}
         \label{fig:user_use_case}
     \end{figure}
@@ -256,7 +265,7 @@ Application icons visually express the application or brands product and service
 	\subsection{Events}
 	\begin{figure}[!h]
         \centering
-        \includegraphics[width=\textwidth]{Diagrams/Events/AzharEventsUseCaseDiagram_Final}
+        \includegraphics[width=\textwidth]{Diagrams/Events/EventsUseCaseDiagram_Final}
         \caption{Events Use Case Diagram}
         \label{fig:events_use_case}
     \end{figure}
@@ -305,14 +314,20 @@ The Application class can be seen as an abstraction of the Access Module and con
 	\subsection{Points of Interest}
 	\begin{figure}[!h]
         \centering
-    %    \includegraphics[width=\textwidth]{Diagrams/PointsOfInterest/"Placesofinterest (1)"}
+        \includegraphics[width=\textwidth]{Diagrams/PointsOfInterest/POIUse}
         \caption{Points of Interest Use Case Diagram}
         \label{fig:poi_use_case}
     \end{figure}
     \begin{figure}[!h]
         \centering
-     %   \includegraphics[width=\textwidth]{Diagrams/PointsOfInterest/"POIClass (6)"}
+        \includegraphics[width=\textwidth]{Diagrams/PointsOfInterest/POIClass}
         \caption{Points of Interest Class Diagram}
         \label{fig:poi_class}
+    \end{figure}
+        \begin{figure}[!h]
+        \centering
+        \includegraphics[width=\textwidth]{Diagrams/PointsOfInterest/POIState}
+        \caption{Points of Interest State Diagram}
+        \label{fig:poi_state}
     \end{figure}
 \end{document}
