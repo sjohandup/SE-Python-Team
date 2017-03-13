@@ -33,9 +33,77 @@
 	
 	\section{External Interface Requirements}
 	\subsection{User Interface}
+	NavUp's user interface is clear, simple to understand, concise, familiar, responsive, attractive and easy to use. It is designed to the standard guides specified by googles materiel design on mobile devices. This ensures that the user has a stress free experience when interacting with it. 
+	The application is effective, efficient resulting in a satisfied user.
+	
+    \paragraph{References to GUI standards and product family style guides that are to be followed by NavUP: } 
+		
+		As previously mentioned google material design standards will be adhered to while designing NavUP’s graphical user interface. Mainly because we expect the NavUP application to be used on mobile devices. 
+		Google has a well-defined set of rules that stand to the classic principles of good design and graphics specifically for mobile interfaces. The goal is to create a visual language that synthesizes good design with innovation and technology. 
+		
+	\paragraph{Standards for fonts, icons, button and labels, images and colour schemes } 
+	
+	Typography is a ‘make or break’ for any mobile application because of the limited screen sizes and resolution. Although fonts may be customizable by the user, depending on their preference, the default font used in the NavUP application is “Open Sans”.
+	
+	 Open Sans is a sans-serif typeface that is designed with open forms and a natural appearance so it’s easy to read. It is optimized for print, web as well as mobile interfaces. It has great legibility characteristics in its letterforms and adapts well with various styles. 
+	
+	\includegraphics[width=0.5\linewidth]{Images/openSans.jpg}\\[1cm]
+	
+	\paragraph{Colour Schemes}
+	
+	Colour schemes in material designed is mostly motivated by deep bold shades compared with soft environments, deep shadows and bright highlights. NavUP will incorporate a combination of fresh, warm and cool colours. Each colour will react differently when an action is triggered within the application. Tints and shades will adjust accordingly to let the user know that an action has been taken. Below are the standards for appropriate values for each to ensure consistency and harmony. The standard is 20% return rate
+	
+	\includegraphics[width=0.5\linewidth]{Images/colourScheme.jpg}\\[1cm]	
+	
+		\paragraph{Icons, buttons and images}
+	
+ Material icons and images use geometric shapes to visually prepresent core ideas and capabilities. NavUp incorporates both application/product icons as well as system icons. \newline
+
+Application icons visually express the application or brands product and services. For example, the NavUP logo or icon. It would be simple, bold and friendly to communicate the core ide and intent of the product/application. To help user navigate their way around campus, in this case. The application icon is the brand identity.
+
+	\includegraphics[width=0.2\linewidth]{Images/gridUP.png}\\[1cm]
+	
+	A system icon, or UI icon, symbolizes a command, file, device, or directory. System icons are used to represent common actions. Below are sample system icons that are find in the NavUp application. Icons are required to be simple, consistent, intuitive and related to an action.\newline
+	
+	\includegraphics[width=0.2\linewidth]{Images/icons.png}\\[1cm]
+	
+	
+	For Square Icons:
+	Height: 152 dp
+	Width: 152 dp
+	For circular icons:
+	Diameter: 176 dp
+	
+	\begin{itemize}
+		\item\textbf {Grid dimension requirierens :} \newline
+		All grid icons have been developed to facilitate consistency and institute a clear set of rules for the positing of graphics elements. Icon dimension requirements are as follows:\newline \newline
+		 \textbf{For Square Icons:} 
+		\item \textbf{Height:} 152 dp
+		\item \textbf{Width:} 152 dp \newline \newline
+	\textbf{For circular icons:} 
+		\item \textbf{Diameter:} 176 dp
+	\end{itemize}
+	
+	\includegraphics[width=0.5\linewidth]{Images/gird.png}\\[1cm]
+	\newline
+	\includegraphics[width=0.5\linewidth]{Images/gird2.png}\\[1cm]
+	
+	Icons are measured in Density Pixel units and are required to adhere to the sizes depicted in the table below. \newline
+	
+		\includegraphics[width=0.5\linewidth]{Images/iconSizes.png}\\[1cm]
+	
+	\paragraph{Screen layout, resolution constraints and designs}
+	\paragraph{Standard buttons, functions, or navigation links that will appear on every screen, such as a help button shortcut key (home)}
+	\paragraph{Accommodations for visually impaired users.}	
 	\subsection{Hardware Interface}
 	\subsection{Software Interface}
+	There are 3 client-side platforms we will be working with namely IOS, Android and web, which will all be comunicating through a common access point, i.e. the web server.  Although all 3 platforms will interact with a web based API, it is important to note that 2 of those platforms will be dealing with a native OS and will have to interact with it appropriately.  To be more specific, when dealing with Android OS, the more popular solution will be interfacing with a java virtual machine, whereas with IOS, we will be interacting with Swift, a popular developer language for most Apple based products.  
+	
+	The Software on the server-side must be capable of gathering the appropriate information from the available clients for statistical purposes to generate for example the heat maps to indicate congestion on a given route.  Furthermore, the server-side software must effectively handle incoming requests and outgoing responses to prevent any and all bottlenecking to the best of its ability.  Client-side software should be able to generate meaningful information to user it receives from the server to allow the user to make appropriate decisions.  
 	\subsection{Communication}
+	The software will interact primarily through a WIFI connection to send requests and recieve responses from the local server.  The most commonly used WIFI frequency is measured at 2.4 GHz, although a more recent upgrade has made use of the 5.0 GHz frequency bandwidth capable of transferring data at a much faster rate.  Thus if the hardware is capable of providing both speeds, the software should be compatable with both, and not cause a bottleneck for devices capable of the higher transfer rate, but also allow for slower connections to be possible.  
+	
+	If a web based API is used as a back-end technology, communication will be easy when using a web server, and web-client.  However when working with native IOS and Android, libraries will need to be included to make comunication possible.  Thus for example making use of sockets to establish connection, and read/write buffer streams for sending and recieving data to and from the web server.  
 	
 	\section{Performance Requirements}
 	\paragraph{The system should be able to run in the following way: }
@@ -151,6 +219,27 @@
         \caption{User Management Use Case Diagram}
         \label{fig:user_use_case}
     \end{figure}
+	
+	    \paragraph{Design patterns used for user class diagram: }
+		\begin{enumerate}
+			\item \textbf{Composite design Pattern:}
+			\begin{itemize}
+				\item \textbf Guest is the Leaf since he can't have any friends.(Not until he registers).
+				\item \textbf User is the component the abstract class
+				\item \textbf RegisteredUser is the Composite, since a RegisteredUser can have friends and his friends can have friends.
+			\end{itemize}
+		
+			\item \textbf{Iterator :}
+			\begin{itemize}
+				\item \textbf We implemented the iterator pattern to enable us to access the ActiveUsers. We will use this to generate heat maps and  ActiveUsers will also be used to get locations of other users 
+							to name only two.
+				\item \textbf User is the component the abstract class
+				\item \textbf RegisteredUser is the Composite, since a RegisteredUser can have friends and his friends can have friends.
+			\end{itemize}		
+		
+		\end{enumerate}
+	
+	
     \begin{figure}[!h]
         \centering
         \includegraphics[width=\textwidth]{Diagrams/UserManagement/UserManagement_ClassDiagram}
@@ -166,26 +255,62 @@
 	\subsection{Events}
 	\begin{figure}[!h]
         \centering
-        \includegraphics[width=\textwidth]{Diagrams/Events/AzharEventsUseCaseDiagram}
+        \includegraphics[width=\textwidth]{Diagrams/Events/AzharEventsUseCaseDiagram_Final}
         \caption{Events Use Case Diagram}
         \label{fig:events_use_case}
     \end{figure}
+   
+   \paragraph{Design patterns used for Events class diagram: }
+		\begin{enumerate}
+			\item \textbf{Observer:}
+			\begin{itemize}
+				\item \textbf To notify users of new events and changes to events via push notifications.
+				\item \textbf Notifier acts as the subject and is updated by the Event class.
+				\item \textbf The Application class acts as an observer and has multiple subclasses (not shown in diagram) to represent the different views that will be updated/notified.
+			\end{itemize}
+			
+			\item \textbf{Memento :}
+			\begin{itemize}
+				\item \textbf To store/restore states of events in the case of an admin needing to undo a change.
+				\item \textbf Notifier acts as the memento
+				\item \textbf The Event class explicitly be seen as the originator
+			\end{itemize}
+			
+			\item \textbf{Template :}
+			\begin{itemize}
+				\item \textbf Inherit attributes and operations from parent Event class to allow for specific refinements in specific types of events.
+				\item \textbf Event class is the abstract class
+				\item \textbf The AcademicEvent, CulturalEvent, ReligiousEvent, SocialEvent and SportEvent classes are explicitly shown as the concrete classes
+			\end{itemize}	
+		\end{enumerate}
+		
+	\paragraph{Important comments regarding the Events class diagram: }	
+	It is important to note that the Events class diagram involves some classes such as the Notifier and Application classes in order to emphasize the importance that these classes have regarding the functionality of the Events Module. 
+The Notifier class emphasizes the importance of push-notifications when events are created or edited whilst also acting as a memento in order to save the state of events should a previous state be restored and then notified to users.
+The Application class can be seen as an abstraction of the Access Module and contains operations such as "syncCalendar()" and "postToSocialMedia()" which are both important in the functionality of the Events Module. These functions, as their names suggest, synchronize events with a calendar (either the users calendar or a calendar that ships with the application) and posts these new events to social media such as Facebook and Instagram in order to create awareness of the event.
+
     \begin{figure}[!h]
         \centering
-        \includegraphics[width=\textwidth]{Diagrams/Events/AzharEventsClassDiagram}
+        \includegraphics[width=\textwidth]{Diagrams/Events/EventsClassDiagram}
         \caption{Events Class Diagram}
         \label{fig:events_class}
+    \end{figure}
+     \begin{figure}[!h]
+        \centering
+        \includegraphics[width=\textwidth]{Diagrams/Events/EventsSequenceDiagramFinal}
+        \caption{Events Sequence Diagram}
+        \label{fig:events_sequence}
     \end{figure}
 	\subsection{Points of Interest}
 	\begin{figure}[!h]
         \centering
-        \includegraphics[width=\textwidth]{Diagrams/PointsOfInterest/"Placesofinterest (1)"}
+    %    \includegraphics[width=\textwidth]{Diagrams/PointsOfInterest/"Placesofinterest (1)"}
         \caption{Points of Interest Use Case Diagram}
         \label{fig:poi_use_case}
     \end{figure}
     \begin{figure}[!h]
         \centering
-        \includegraphics[width=\textwidth]{Diagrams/PointsOfInterest/"POIClass (6)"}
+     %   \includegraphics[width=\textwidth]{Diagrams/PointsOfInterest/"POIClass (6)"}
         \caption{Points of Interest Class Diagram}
         \label{fig:poi_class}
     \end{figure}
