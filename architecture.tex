@@ -98,7 +98,13 @@ Application icons visually express the application or brands product and service
 	\includegraphics[width=0.5\linewidth]{Images/screenDesigns.jpg}\\[1cm]
 	\includegraphics[width=0.5\linewidth]{Images/homeScreen.png}\\[1cm]
 	\subsection{Software Interface}
+	There are 3 client-side platforms we will be working with namely IOS, Android and web, which will all be comunicating through a common access point, i.e. the web server.  Although all 3 platforms will interact with a web based API, it is important to note that 2 of those platforms will be dealing with a native OS and will have to interact with it appropriately.  To be more specific, when dealing with Android OS, the more popular solution will be interfacing with a java virtual machine, whereas with IOS, we will be interacting with Swift, a popular developer language for most Apple based products.  
+	
+	The Software on the server-side must be capable of gathering the appropriate information from the available clients for statistical purposes to generate for example the heat maps to indicate congestion on a given route.  Furthermore, the server-side software must effectively handle incoming requests and outgoing responses to prevent any and all bottlenecking to the best of its ability.  Client-side software should be able to generate meaningful information to user it receives from the server to allow the user to make appropriate decisions.  
 	\subsection{Communication}
+	The software will interact primarily through a WIFI connection to send requests and recieve responses from the local server.  The most commonly used WIFI frequency is measured at 2.4 GHz, although a more recent upgrade has made use of the 5.0 GHz frequency bandwidth capable of transferring data at a much faster rate.  Thus if the hardware is capable of providing both speeds, the software should be compatable with both, and not cause a bottleneck for devices capable of the higher transfer rate, but also allow for slower connections to be possible.  
+	
+	If a web based API is used as a back-end technology, communication will be easy when using a web server, and web-client.  However when working with native IOS and Android, libraries will need to be included to make comunication possible.  Thus for example making use of sockets to establish connection, and read/write buffer streams for sending and recieving data to and from the web server.  
 	
 	\section{Performance Requirements}
 	\paragraph{The system should be able to run in the following way: }
