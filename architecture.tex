@@ -28,7 +28,9 @@
 	\newpage
 	
 	\section{Introduction}
+	
     \subsection{Purpose}
+   This document provides a comprehensive architectural overview of the system, using a number of different architectural views to depict different aspects of the system. We focused on using the Model-View-Controller architecture system. Our document intends to capture and convey the significant architectural decisions which have been made on the system. 
 	\subsection{Scope}
 	
 	\section{External Interface Requirements}
@@ -168,16 +170,11 @@ Application icons visually express the application or brands product and service
 	The data module should provide means of communication even when the server is under strain in order to be robust. This may be done in terms of a pipeline system where messages are queued and receipt of them are acknowledged, along with the error detection and correction discussed under Reliability.
 	\subsection{Efficiency}
 	Sending data between remote locations relies heavily on the network traffic and its capabilities/limitations.  Thus the idea would be to put the least amount of stress and congestion on that network and only make strategic requests from client to server.  The idea would be to make relatively frequent requests to small yet crucial information, and much less frequent requests to information that is less likely to change within a small period of time.
-	\subsection{Interoperability}
-	\subsection{Maintainability}
-	\subsection{Testability}
-	\subsection{Portability}
 	\subsubsection{Hardware Independence}
 	Seeing as how the system will be deployed with a web base as a back-end API, the hardware choices are not limited to a specific set of components, so long as they meet the minimum or preferably recommended requirements to be able to handle the estimated network traffic to keep the system performing at optimal levels.
 	\subsubsection{Software Dependence}
 	The software on the other hand will be limited to being web specific, i.e. being able to use or integrate with applications like AJAX, Node etc.
-	\subsection{Reusability}
-	\subsection{Modularity}
+
 	\subsection{Cohesion}
 	The NavUP system can be designed with the high cohesion principle in mind.  The system as a whole should be formulated in to a hierarchical tree-structure, comprising of subsystems, or modules.  The modules should be able to either function independently, or be able to call on one or more modules in the hierarchy to perform a given task.  Thus adding or removing modules should not break the system so much as increase or reduce  its functionality as a whole.
 	
@@ -195,6 +192,10 @@ Application icons visually express the application or brands product and service
 	
 	The connection is established via either the HyperText Transfer Protocol (HTTP), or it's secured counterpart HTTPS that makes use of the Secure Socket Layer (SSL) depending on the nature of the message contents, and is maintained only for the duration of the message send and receive process. The requests will, more specifically, be made using Asynchronous JSON and XML (AJAX) and will always be paired with a response. The protocol that HTTP is built on, the Transmission Control Protocol (TCP), ensures the delivery of messages in the correct order and that the messages remain intact.
 	\subsection{Users}
+		
+	We will be using passportJS as authentication middleware for the user passowrd verification. This will then be used to interface with the datbase manager unit.
+	It is one of nodeJS's extensions. 
+	We will also be using StormPath as a usermanagement API. 
 	\subsection{Events}
 	\subsection{Points of Interest}
 	
